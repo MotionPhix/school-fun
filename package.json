@@ -6,10 +6,13 @@
         "build": "vite build && vite build --ssr"
     },
     "devDependencies": {
+        "@headlessui/vue": "^1.7.20",
         "@protonemedia/laravel-splade": "^1.4.8",
+        "@tabler/icons-vue": "^3.2.0",
         "@tailwindcss/forms": "^0.5.3",
         "@tailwindcss/typography": "^0.5.2",
         "@vitejs/plugin-vue": "^4.0.0",
+        "@vueuse/components": "^10.9.0",
         "autoprefixer": "^10.4.12",
         "axios": "^1.6.4",
         "laravel-vite-plugin": "^0.7.5",
