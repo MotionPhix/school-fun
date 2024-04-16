@@ -31,7 +31,22 @@ Route::middleware(['splade'])->group(function () {
         \App\Http\Controllers\Home::class
       )->name('home');
 
-      Route::prefix('admin')->group(function () {
+      Route::prefix('settings')->group(function () {
+
+        Route::post(
+          'c/school-year',
+          [\App\Http\Controllers\Settings\Setting::class, 'store']
+        )->name('settings.schoolyear.store');
+
+        Route::post(
+          'b/school-year',
+          [\App\Http\Controllers\Settings\Setting::class, 'browse']
+        )->name('settings.schoolyear.browse');
+
+        Route::get(
+          '/g/school-year',
+          [\App\Http\Controllers\Settings\Setting::class, 'index']
+        )->name('settings.schoolyear');
 
       });
 

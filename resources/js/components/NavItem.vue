@@ -15,12 +15,13 @@ const hasActiveChild = computed(() => {
   return hasActiveItem(props.item.children);
 });
 </script>
+
 <template>
   <a
     v-if="!item.children.length"
     :class="[
       'group flex w-full items-center rounded-md py-2 px-3 text-sm',
-      'hover:bg-gray-100',
+      'hover:bg-gray-300',
       item.active ? 'font-semibold text-gray-800' : 'font-medium text-gray-600',
     ]"
     :href="item.href"
@@ -31,8 +32,8 @@ const hasActiveChild = computed(() => {
         item.active ? 'text-gray-600' : 'text-gray-400',
       ]"
       :is="item.icon"
-      v-if="item.icon"
-    ></component>
+      v-if="item.icon" />
+
     <span>{{ item.label }}</span>
   </a>
 
@@ -44,10 +45,10 @@ const hasActiveChild = computed(() => {
     <DisclosureButton
       :class="[
         'group flex w-full items-center rounded-md py-2 px-3 text-left text-sm',
-        'hover:bg-gray-100',
+        'hover:bg-gray-300',
         open ? 'font-semibold text-gray-800' : 'font-medium text-gray-600',
-      ]"
-    >
+      ]">
+
       <component
         :class="[
           'mr-2 h-6 w-6 shrink-0 group-hover:text-gray-600',
@@ -69,8 +70,7 @@ const hasActiveChild = computed(() => {
     <DisclosurePanel class="ml-4">
       <NavItem
         v-for="child in item.children"
-        :item="child"
-      />
+        :item="child" />
     </DisclosurePanel>
   </Disclosure>
 </template>

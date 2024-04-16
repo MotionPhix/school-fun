@@ -21,7 +21,9 @@ trait SchoolYear {
             $latest_school_year = $this->schoolYearRepository->getLatestYear();
 
             if ($latest_school_year) {
+
                 $current_school_year_id = $latest_school_year->id;
+
             }
         }
 

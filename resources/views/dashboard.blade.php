@@ -2,29 +2,37 @@
 
 <x-app-layout>
 
-    <x-slot:header>
+  <x-slot:header>
 
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
 
-            {{ __('Dashboard') }}
+      {{ __('Dashboard') }}
 
-        </h2>
+    </h2>
 
-    </x-slot>
+  </x-slot>
 
-    <div class="py-12">
+  <div class="py-12">
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 flex">
 
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+      <article>
 
-                @include('components.welcome')
+        <SideMenu class="sticky top-24" />
 
-            </div>
+        {{-- <x-settings-menu /> --}}
 
-        </div>
+      </article>
+
+      <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg col-span-3">
+
+        @include('components.welcome')
+
+      </div>
 
     </div>
+
+  </div>
 
 
 </x-app-layout>
