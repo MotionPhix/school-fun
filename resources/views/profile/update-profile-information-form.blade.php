@@ -22,15 +22,18 @@
 
                     <!-- Current Profile Photo -->
                     <div v-show="!form.photo" class="mt-2">
-                        <img src="{{ auth()->user()->profile_photo_url }}" alt="{{ auth()->user()->name }}" class="rounded-full h-20 w-20 object-cover">
+                        <img
+                          src="{{ auth()->user()->profile_photo_url }}"
+                          alt="{{ auth()->user()->first_name }}"
+                          class="rounded-full h-20 w-20 object-cover">
                     </div>
 
                     <!-- New Profile Photo Preview -->
                     <div v-show="form.photo" class="mt-2">
                         <span
                             class="block rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center"
-                            :style="'background-image: url(\'' + form.$fileAsUrl('photo') + '\');'"
-                        />
+                            :style="'background-image: url(\'' + form.$fileAsUrl('photo') + '\');'">
+                        </span>
                     </div>
 
                     <!-- Profile Photo File Input -->
@@ -50,13 +53,18 @@
                 </div>
             @endif
 
-            <!-- Name -->
-            <div class="col-span-6 sm:col-span-4">
-                <x-splade-input id="name" name="name" :label="__('Name')" autocomplete="name" />
+            <!-- First Name -->
+            <div class="col-span-6">
+                <x-splade-input id="first_name" name="first_name" :label="__('First Name')" autocomplete="name" />
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-span-6">
+                <x-splade-input id="last_name" name="last_name" :label="__('Last Name')" />
             </div>
 
             <!-- Email -->
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6">
                 <x-splade-input id="email" name="email" type="email" :label="__('Email')" autocomplete="name" />
                 <div id="verify-email" />
             </div>

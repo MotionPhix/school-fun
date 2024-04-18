@@ -69,7 +69,8 @@ class PromotionRepository
   public function getMaleStudentsBySessionCount($school_year_id)
   {
     $allStudents = Promotion::where(
-      'school_year_id', $school_year_id
+      'school_year_id',
+      $school_year_id
     )->pluck('student_id')->toArray();
 
     return User::where('gender', 'Male')
