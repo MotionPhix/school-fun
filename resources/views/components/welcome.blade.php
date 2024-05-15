@@ -21,21 +21,21 @@
 
     <div class="flex flex-wrap  justify-start">
 
-      <div class="sm:w-5/6 pr-4 pl-4 md:w-5/6 lg:w-4/5 xl:w-4/5">
+      <div>
 
         <div class="flex flex-wrap pt-3">
 
-          <div class="relative flex-grow max-w-full flex-1 px-4 ps-4">
+          <div class="relative flex-grow max-w-full flex-1">
 
-            <h1 class="display-6 mb-3">
+            <h1 class="flex items-center gap-2 mb-3">
 
-              <i class="ms-auto bi bi-grid"></i>
+              <x-tabler-layout-grid class="h-7 w-7" stroke="0.5" />
 
-              {{ __('Dashboard') }}
+              <span>{{ __('Dashboard') }}</span>
 
             </h1>
 
-            <div class="flex flex-wrap  dashboard">
+            {{-- <div class="flex flex-wrap  dashboard">
 
               <div class="relative flex-grow max-w-full flex-1 px-4">
 
@@ -121,11 +121,113 @@
                 </div>
               </div>
 
+            </div> --}}
+
+            <div class="grid sm:grid-cols-4 border-y border-gray-200 dark:border-neutral-800">
+    <!-- Card -->
+    <div class="p-4 md:p-5 relative before:absolute before:top-0 before:start-0 before:w-full before:h-px sm:before:w-px sm:before:h-full before:bg-gray-200 before:first:bg-transparent dark:before:bg-neutral-800">
+      <div>
+        <svg class="flex-shrink-0 size-5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+
+        <div class="mt-3">
+          <div class="flex items-center gap-x-2">
+            <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
+              Total users
+            </p>
+            <div class="hs-tooltip">
+              <div class="hs-tooltip-toggle">
+                <svg class="flex-shrink-0 size-4 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                  The number of daily users
+                </span>
+              </div>
             </div>
+          </div>
+          <div class="mt-1 lg:flex lg:justify-between lg:items-center">
+
+            <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-neutral-200">
+              72,540
+            </h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <div class="p-4 md:p-5 relative before:absolute before:top-0 before:start-0 before:w-full before:h-px sm:before:w-px sm:before:h-full before:bg-gray-200 before:first:bg-transparent dark:before:bg-neutral-800">
+      <div>
+        <svg class="flex-shrink-0 size-5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>
+
+        <div class="mt-3">
+          <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
+            Sessions
+          </p>
+
+          <div class="mt-1 lg:flex lg:justify-between lg:items-center">
+
+            <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-neutral-200">
+              29.4%
+            </h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <div class="p-4 md:p-5 relative before:absolute before:top-0 before:start-0 before:w-full before:h-px sm:before:w-px sm:before:h-full before:bg-gray-200 before:first:bg-transparent dark:before:bg-neutral-800">
+      <div>
+        <svg class="flex-shrink-0 size-5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6"/><path d="m12 12 4 10 1.7-4.3L22 16Z"/></svg>
+
+        <div class="mt-3">
+          <div class="flex items-center gap-x-2">
+
+            <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
+              Avg. Click Rate
+            </p>
+
+          </div>
+
+          <div class="mt-1 lg:flex lg:justify-between lg:items-center">
+
+            <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-neutral-200">
+              56.8%
+            </h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <div class="p-4 md:p-5 relative before:absolute before:top-0 before:start-0 before:w-full before:h-px sm:before:w-px sm:before:h-full before:bg-gray-200 before:first:bg-transparent dark:before:bg-neutral-800">
+      <div>
+        <svg class="flex-shrink-0 size-5 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12s2.545-5 7-5c4.454 0 7 5 7 5s-2.546 5-7 5c-4.455 0-7-5-7-5z"/><path d="M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/><path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2"/><path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2"/></svg>
+
+        <div class="mt-3">
+          <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
+            Pageviews
+          </p>
+          <div class="mt-1 lg:flex lg:justify-between lg:items-center">
+
+            <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-neutral-200">
+              92,913
+            </h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Card -->
+  </div>
 
             @if($studentCount > 0)
 
-            <div class="mt-3 flex items-center">
+            {{-- <div class="mt-3 flex items-center">
 
               <div class="w-1/4">
                 <span class="ps-2 me-2">Students %</span>
@@ -153,7 +255,7 @@
 
               </div>
 
-            </div>
+            </div> --}}
 
             @endif
 

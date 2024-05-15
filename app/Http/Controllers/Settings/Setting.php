@@ -18,13 +18,13 @@ class Setting extends Controller
   use SchoolYear;
 
   public function __construct(
-    SettingInterface $settingRepository,
-    SchoolYearInterface $schoolYearRepository,
-    SchoolClassInterface $schoolClassRepository,
-    SectionInterface $schoolSectionRepository,
-    UserInterface $userRepository,
-    CourseInterface $courseRepository,
-    SemesterInterface $semesterRepository
+    public SettingInterface $settingRepository,
+    public SchoolYearInterface $schoolYearRepository,
+    public SchoolClassInterface $schoolClassRepository,
+    public SectionInterface $schoolSectionRepository,
+    public UserInterface $userRepository,
+    public CourseInterface $courseRepository,
+    public SemesterInterface $semesterRepository
   ) {}
 
   /**
@@ -40,9 +40,9 @@ class Setting extends Controller
 
     $school_years = $this->schoolYearRepository->getAll();
 
-    $school_classes = $this->schoolClassRepository->getAllByYear($current_school_year_id);
+    $school_classes = $this->schoolClassRepository->getAllBySchoolYear($current_school_year_id);
 
-    $school_sections = $this->schoolSectionRepository->getAllByYear($current_school_year_id);
+    $school_sections = $this->schoolSectionRepository->getAllBySchoolYear($current_school_year_id);
 
     $teachers = $this->userRepository->getAllTeachers();
 

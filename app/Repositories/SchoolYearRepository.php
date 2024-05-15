@@ -31,15 +31,19 @@ class SchoolYearRepository implements SchoolYearInterface
 
   public function getPreviousSchoolYear()
   {
+
     $lastTwoSchoolYears = SchoolYear::orderBy('id', 'desc')
       ->take(2)
       ->get()
       ->toArray();
+
     return (count($lastTwoSchoolYears) < 2) ? [] : $lastTwoSchoolYears[1];
+
   }
 
   public function createSchoolYear($request)
   {
+
     try {
 
       SchoolYear::create($request);
@@ -49,10 +53,12 @@ class SchoolYearRepository implements SchoolYearInterface
       throw new \Exception('Failed to create school year. ' . $e->getMessage());
 
     }
+
   }
 
   public function browse($request)
   {
+
     try {
 
       if (
@@ -75,10 +81,13 @@ class SchoolYearRepository implements SchoolYearInterface
       throw new \Exception('Failed to set School Session for browsing. ' . $e->getMessage());
 
     }
+
   }
 
   public function getSchoolYearById($id)
   {
+
     return SchoolYear::find($id);
+
   }
 }
