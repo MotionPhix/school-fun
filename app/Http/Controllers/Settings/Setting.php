@@ -50,7 +50,7 @@ class Setting extends Controller
 
     $semesters = $this->semesterRepository->getAll($current_school_year_id);
 
-    return view('settings.years', [
+    return view('settings.index', [
       'current_school_year_id' => $current_school_year_id,
       'latest_school_year_id' => $latest_school_year->id,
       'academic_setting' => $academic_setting,
@@ -61,6 +61,46 @@ class Setting extends Controller
       'courses' => $courses,
       'semesters' => $semesters,
     ]);
+  }
+
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  Request $request
+   * @return \Illuminate\Http\Response
+   */
+  public function updateAttendanceType(Request $request)
+  {
+
+    try {
+
+      $this->settingRepository->updateAttendanceType($request->validated());
+
+      return back()->with('status', 'Attendance type update was successful!');
+
+    } catch (\Exception $e) {
+
+      return back()->withError($e->getMessage());
+
+    }
+
+  }
+
+  public function updateFinalMarksSubmissionStatus(Request $request)
+  {
+
+    try {
+
+      $this->settingRepository->updateFinalMarksSubmissionStatus($request);
+
+      return back()->with('status', 'Final marks submission status update was successful!');
+
+    } catch (\Exception $e) {
+
+      return back()->withError($e->getMessage());
+
+    }
+
   }
 
   /**
