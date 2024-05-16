@@ -39,10 +39,9 @@
                         <x-splade-input
                           type="text"
                           class="w-full"
-                          label="Session name"
-                          placeholder="E.g. 2021 - 2022"
-                          aria-label="Current Session"
-                          name="session_name" />
+                          placeholder="Enter an academic year e.g. 2021 - 2022"
+                          aria-label="Current academic year"
+                          name="school_year_name" />
 
                       </div>
 
@@ -87,7 +86,7 @@
                     <div class="mb-3">
 
                       <x-splade-select
-                        label="Select academic year"
+                        placeholder="Pick an academic year"
                         name="school_year_id"
                         choices>
 
@@ -97,7 +96,7 @@
 
                             <option value="{{ $school_year->id }}">
 
-                              {{ $school_year->name }}
+                              {{ $school_year->school_year_name }}
 
                             </option>
 
@@ -259,7 +258,6 @@
                           class="w-full"
                           name="class_name"
                           placeholder="Class name"
-                          label="New class name"
                           required />
 
                       </div>
@@ -386,7 +384,7 @@
                           <x-splade-select
                             name="course_type"
                             label="Course type"
-                            choices="{ search: false }" required>
+                            choices="{ searchEnabled: false }" required>
 
                             <option value="">Pick a type for the course</option>
 
@@ -522,9 +520,10 @@
                       <div>
 
                         <x-splade-select
-                          label="Assign teacher to semester"
                           name="semester_id"
-                          choices required>
+                          label="Assign teacher to semester"
+                          choices="{ searchEnabled: false }"
+                          required>
 
                           <option value="">
 
@@ -581,7 +580,7 @@
                         <x-splade-select
                           label="Assign teacher to class section"
                           name="section_id"
-                          choices required>
+                          choices="{ searchEnabled: false }" required>
 
                           <option value="">Pick a subdivision</option>
 
