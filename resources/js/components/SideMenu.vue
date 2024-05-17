@@ -3,12 +3,12 @@ import NavItem from "../components/NavItem.vue";
 import { IconSmartHome, IconChartLine, IconPhoto } from "@tabler/icons-vue";
 
 const navItems = [
-  { href: "#", active: false, label: "Dashboard", children: [], icon: IconSmartHome },
+  { href: '', active: false, label: "Dashboard", children: [], icon: IconSmartHome },
   {
-    href: "#", active: false,
-    label: "Posts",
+    href: "", active: false,
+    label: "Settings",
     children: [
-      {href: "#", active: false, label: "All posts", children: [], icon: null},
+      {href: "/g/school-year", active: false, label: "Academics", children: [], icon: null},
       {href: "#", active: false, label: "Add new", children: [], icon: null},
       {href: "#", active: false, label: "Categories", children: [], icon: null},
     ],

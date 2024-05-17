@@ -1,11 +1,13 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { IconChevronDown } from "@tabler/icons-vue";
-import { computed } from "vue";
+import { computed, inject } from "vue";
 
 const props = defineProps({
   item: Object,
 });
+
+const Splade = inject("$splade");
 
 const hasActiveChild = computed(() => {
   function hasActiveItem(items) {
@@ -14,17 +16,21 @@ const hasActiveChild = computed(() => {
 
   return hasActiveItem(props.item.children);
 });
+
+function visitPath(path) {
+  Splade.visit(path);
+}
 </script>
 
 <template>
-  <a
+  <button
     v-if="!item.children.length"
     :class="[
       'group flex w-full items-center rounded-md py-2 px-3 text-sm',
       'hover:bg-gray-300',
       item.active ? 'font-semibold text-gray-800' : 'font-medium text-gray-600',
     ]"
-    :href="item.href"
+    @click="visitPath(item.href)"
   >
     <component
       :class="[
@@ -35,7 +41,7 @@ const hasActiveChild = computed(() => {
       v-if="item.icon" />
 
     <span>{{ item.label }}</span>
-  </a>
+  </button>
 
   <Disclosure
     v-else

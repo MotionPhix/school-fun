@@ -16,20 +16,12 @@ Route::middleware(['splade'])->group(function () {
     // Registers routes to support async File Uploads with Filepond...
     Route::spladeUploads();
 
-    Route::middleware([
-        'auth:sanctum',
-        config('jetstream.auth_session'),
-        'verified',
-    ])->group(function () {
-        Route::view('/dashboard', 'dashboard')->name('dashboard');
-    });
-
     Route::middleware('auth')->group(function () {
 
       Route::get(
         '/',
         \App\Http\Controllers\Home::class
-      )->name('home');
+      )->name('dashboard');
 
       Route::prefix('settings')->group(function () {
 
