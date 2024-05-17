@@ -9,15 +9,18 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class SettingFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
-    {
-        return [
-            //
-        ];
-    }
+  /**
+   * Define the model's default state.
+   *
+   * @return array<string, mixed>
+   */
+  public function definition(): array
+  {
+
+    return [
+      'attendance_type' => 'section',
+      'marks_submission_status' => 'off',
+    ];
+
+  }
 }
